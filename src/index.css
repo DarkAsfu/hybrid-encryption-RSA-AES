@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.g_text {
+  background: #004dcf;
+  background: linear-gradient(to right, #004dcf 0%, #cf4579 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 18px;
+}
