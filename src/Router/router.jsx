@@ -3,11 +3,14 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Main from "../Layouts/Main";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import Dashboard from "../Layouts/Dashboard";
+import ProtectRoute from "./ProtectRoute";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
+    element: <ProtectRoute><Main/></ProtectRoute>,
     children: [
       {
         path: "/",
@@ -30,6 +33,16 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login/>
+      }
+    ]
+  },
+  {
+    path: "/dashboard",
+    element: <AdminRoute><Dashboard/></AdminRoute>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <h1>This </h1>
       }
     ]
   }

@@ -19,9 +19,9 @@ const Login = () => {
             Swal.fire('Success!', 'Login successful!', 'success');
             // Redirect based on role
             if (response.data.role === 'Admin') {
-                window.location.href = '/admin-dashboard';
+                window.location.href = '/dashboard';
             } else {
-                window.location.href = '/lessons';
+                window.location.href = '/';
             }
         } catch (error) {
             console.log(error);
