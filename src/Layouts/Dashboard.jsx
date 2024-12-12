@@ -117,7 +117,7 @@ const Dashboard = () => {
                 <NavLink
                   to='/dashboard/all-users'
                   className={({ isActive }) =>
-                    `flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                    `flex items-center mt-2 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
                       isActive ? 'bg-success text-white' : ''
                     }`
                   }
@@ -143,7 +143,7 @@ const Dashboard = () => {
                 <NavLink
                   to='/dashboard/lessons'
                   className={({ isActive }) =>
-                    `flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                    `flex items-center mt-2 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
                       isActive ? 'bg-success text-white' : ''
                     }`
                   }
@@ -153,9 +153,9 @@ const Dashboard = () => {
                   </span>
                 </NavLink>
                 <NavLink
-                  to='/dashboard/lessons'
+                  to='/dashboard/add-lessons'
                   className={({ isActive }) =>
-                    `flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                    `flex items-center mt-2 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
                       isActive ? 'bg-success text-white' : ''
                     }`
                   }
@@ -165,9 +165,9 @@ const Dashboard = () => {
                   </span>
                 </NavLink>
                 <NavLink
-                  to='/dashboard/lessons'
+                  to='/dashboard/vocabularies'
                   className={({ isActive }) =>
-                    `flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                    `flex items-center mt-2 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
                       isActive ? 'bg-success text-white' : ''
                     }`
                   }
@@ -177,9 +177,9 @@ const Dashboard = () => {
                   </span>
                 </NavLink>
                 <NavLink
-                  to='/dashboard/lessons'
+                  to='/dashboard/add-vocabularies'
                   className={({ isActive }) =>
-                    `flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                    `flex items-center mt-2 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
                       isActive ? 'bg-success text-white' : ''
                     }`
                   }
@@ -205,7 +205,7 @@ const Dashboard = () => {
                 <NavLink
                   to='/dashboard/tutorial'
                   className={({ isActive }) =>
-                    `flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
+                    `flex items-center mt-2 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ${
                       isActive ? 'bg-success text-white' : ''
                     }`
                   }
@@ -221,7 +221,7 @@ const Dashboard = () => {
       </aside>
 
       <div className='p-4 sm:ml-72'>
-        <div className='p-4  border-2 border-gray-200  rounded-lg dark:border-gray-700 mt-28 overflow-auto'>
+        <div className='p-4  border-2 border-gray-200  rounded-lg dark:border-gray-700 mt-20 overflow-auto'>
           <Outlet />
         </div>
       </div>

@@ -8,6 +8,7 @@ import ProtectRoute from "./ProtectRoute";
 import AdminRoute from "./AdminRoute";
 import NotAuthorized from "../Errors/NotAuthorized";
 import AllUsers from "../Components/AllUsers";
+import AddLessons from "../Pages/AddLessons";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,14 @@ const router = createBrowserRouter([
       {
         path: "all-users",
         element: <AllUsers/>
+      },
+      {
+        path: "lessons",
+        element: <h1>Lessons</h1>
+      },
+      {
+        path: "add-lessons",
+        element: <AddLessons/>
       }
     ]
   },
