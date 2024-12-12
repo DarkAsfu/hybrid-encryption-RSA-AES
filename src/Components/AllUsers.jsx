@@ -15,7 +15,6 @@ import DashboardHeader from '../Utils/DashboardHeader';
 
 export default function AllUsers() {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [updateFlag, setUpdateFlag] = React.useState(false); // State to force re-render
 
   let list = useAsyncList({
     async load({ signal }) {
@@ -50,23 +49,35 @@ export default function AllUsers() {
         },
         body: JSON.stringify({ role: newRole }),
       });
-
+  
       if (!res.ok) {
         throw new Error('Failed to update user role');
       }
-
-      const updatedUser = await res.json();
-      Swal.fire('Success!', 'User role updated successfully!', 'success');
-
-      // Update the list with the new role
-      list.update(userId, { ...list.getItem(userId), role: newRole });
-      setUpdateFlag(!updateFlag); // Force re-render
+  
+      const { message, token: newToken } = await res.json();
+      Swal.fire('Success!', message, 'success');
+  
+      // If the role of the current user is updated, force logout
+      const decodedToken = JSON.parse(atob(token.split('.')[1]));
+      if (userId === decodedToken.id) {
+        Swal.fire({
+          title: 'Role Changed',
+          text: 'Your role has been updated. Please log in again to access your new permissions.',
+          icon: 'info',
+        }).then(() => {
+          localStorage.clear();
+          window.location.href = '/auth/login'; // Redirect to login page
+        });
+      } else {
+        // Update the list for the changed user
+        list.update(userId, { ...list.getItem(userId), role: newRole });
+      }
     } catch (error) {
       console.error('Error updating role:', error.message);
       Swal.fire('Error!', 'Failed to update user role!', 'error');
     }
   };
-
+  
   return (
     <div>
       <DashboardHeader

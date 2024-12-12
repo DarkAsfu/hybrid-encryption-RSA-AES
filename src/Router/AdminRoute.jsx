@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode'; // Use named import
 import Dashboard from '../Layouts/Dashboard';
 
