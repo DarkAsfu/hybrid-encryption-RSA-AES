@@ -48,7 +48,7 @@ const Dashboard = () => {
                             </button>
                             <Link
                                 to="/"
-                                className="text-3xl md:text-4xl font-bold text-danger py-5"
+                                className="text-3xl md:text-4xl font-bold text-success py-5"
                             >
                                 Logo
                                 {/* <img src={logo} className="w-36 md:w-56" alt="" /> */}

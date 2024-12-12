@@ -6,6 +6,8 @@ import Login from "../Pages/Login";
 import Dashboard from "../Layouts/Dashboard";
 import ProtectRoute from "./ProtectRoute";
 import AdminRoute from "./AdminRoute";
+import NotAuthorized from "../Errors/NotAuthorized";
+import AllUsers from "../Components/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: "/lessons",
         element: <h1>This is lesson page</h1>
-      }
+      },
+      
     ]
   },
   {
@@ -42,9 +45,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <h1>This </h1>
+        element: <h1>This is Dashboard Home</h1>
+      },
+      {
+        path: "all-users",
+        element: <AllUsers/>
       }
     ]
+  },
+  {
+    path: "/not-authorized",
+    element: <NotAuthorized/>
   }
 ]);
 

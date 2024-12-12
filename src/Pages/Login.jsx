@@ -64,13 +64,14 @@ const Login = () => {
                         isRequired
                     />
                     <Spacer y={2} />
-                    <p className="text-white mb-3">New here? Please sign up <Link className="text-primary" to="/auth/register">here</Link></p>
+                    <p className="text-white mb-3">New here? Please sign up <Link className="text-success" to="/auth/register">here</Link></p>
                     <Button
                         type="submit"
-                        color="primary"
+                        color="success"
                         auto
                         css={{ width: "100%", borderRadius: "8px" }}
                         disabled={loading}
+                        className='font-bold font-sans text-md text-white'
                     >
                         {loading ? 'Loading...' : 'Log In'}
                     </Button>

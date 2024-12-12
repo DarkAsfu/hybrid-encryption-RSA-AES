@@ -137,13 +137,14 @@ const Register = () => {
                         required
                     />
                     <Spacer y={2} />
-                    <p className='text-white mb-3'>Are you new? Please login <Link className='text-primary' to="/auth/login">Click here</Link></p>
+                    <p className='text-white mb-3'>Are you new? Please login <Link className='text-success' to="/auth/login">Click here</Link></p>
                     <Button
                         type="submit"
-                        color="primary"
+                        color="success"
                         auto
                         css={{ width: "100%", borderRadius: "8px" }}
                         disabled={loading}
+                        className='font-bold font-sans text-md text-white'
                     >
                         {loading ? 'Loading...' : 'Sign Up'}
                     </Button>

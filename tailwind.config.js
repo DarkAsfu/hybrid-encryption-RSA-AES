@@ -11,7 +11,8 @@ export default {
     extend: {
       colors: {
         danger: "#c10000",
-        primary: "#191919"
+        primary: "#191919",
+        success: "#38BDF8"
       },
     },
   },
