@@ -9,6 +9,8 @@ import AdminRoute from "./AdminRoute";
 import NotAuthorized from "../Errors/NotAuthorized";
 import AllUsers from "../Components/AllUsers";
 import AddLessons from "../Pages/AddLessons";
+import AllLessons from "../Pages/AllLessons";
+import UpdateLesson from "../Pages/UpdateLesson";
 
 const router = createBrowserRouter([
   {
@@ -54,11 +56,16 @@ const router = createBrowserRouter([
       },
       {
         path: "lessons",
-        element: <h1>Lessons</h1>
+        element: <AllLessons/>
       },
       {
         path: "add-lessons",
         element: <AddLessons/>
+      },
+
+      {
+        path:"update-lesson/:lessonId",
+        element: <UpdateLesson/>
       }
     ]
   },
