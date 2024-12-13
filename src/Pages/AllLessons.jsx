@@ -1,6 +1,7 @@
 import { useAsyncList } from '@react-stately/data';
 import DashboardHeader from '../Utils/DashboardHeader';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 import {
   getKeyValue,
   Spinner,
@@ -42,24 +43,42 @@ const AllLessons = () => {
 
   // Delete a lesson
   const deleteLesson = async (id) => {
-    const token = localStorage.getItem('token');
-    try {
-      let res = await fetch(`http://localhost:5000/lessons/${id}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${token}`
+    // Show confirmation dialog
+    const result = await Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    });
+  
+    // If user confirms, proceed with deletion
+    if (result.isConfirmed) {
+      const token = localStorage.getItem('token');
+      try {
+        let res = await fetch(`http://localhost:5000/lessons/${id}`, {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+  
+        if (res.ok) {
+          await list.reload(); // Refresh the list
+          Swal.fire('Deleted!', 'The lesson has been deleted.', 'success');
+        } else {
+          Swal.fire('Error!', 'Failed to delete the lesson.', 'error');
         }
-      });
-
-      if (res.ok) {
-        list.remove(id); // Remove the item from the list
-      } else {
-        console.error('Failed to delete lesson');
+      } catch (error) {
+        console.error('Error deleting lesson:', error);
+        Swal.fire('Error!', 'An error occurred while deleting the lesson.', 'error');
       }
-    } catch (error) {
-      console.error('Error deleting lesson:', error);
     }
   };
+  
+  
 
   return (
     <div>

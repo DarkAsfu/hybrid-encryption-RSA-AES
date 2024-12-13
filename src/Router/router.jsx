@@ -11,6 +11,9 @@ import AllUsers from "../Components/AllUsers";
 import AddLessons from "../Pages/AddLessons";
 import AllLessons from "../Pages/AllLessons";
 import UpdateLesson from "../Pages/UpdateLesson";
+import AddVocabulary from "../Pages/AddVocabulary";
+import AllVocabularies from "../Pages/AllVocabularies";
+import UpdateVocabulary from "../Pages/UpdateVocabulary";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +69,18 @@ const router = createBrowserRouter([
       {
         path:"update-lesson/:lessonId",
         element: <UpdateLesson/>
+      },
+      {
+        path: "add-vocabularies",
+        element: <AddVocabulary/>
+      },
+      {
+        path: "vocabularies",
+        element: <AllVocabularies/>
+      },
+      {
+        path: "update-vocabulary/:vocabId",
+        element: <UpdateVocabulary/>
       }
     ]
   },
