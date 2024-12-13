@@ -66,7 +66,7 @@ const UpdateLesson = () => {
   }
 
   return (
-    <div>
+    <div className='space-y-6'>
       <h3>Update Lesson</h3>
       <Input
         label="Lesson Number"
@@ -78,7 +78,7 @@ const UpdateLesson = () => {
         value={lesson.name || ''}
         onChange={(e) => setLesson({ ...lesson, name: e.target.value })}
       />
-      <Button auto onPress={updateLesson}>
+      <Button className='' color='success' auto onPress={updateLesson}>
         Save
       </Button>
     </div>

@@ -99,7 +99,7 @@ const AllLessons = () => {
                     <>
                       <Button
                         auto
-                        color="warning"
+                        color="success"
                         onClick={() => {
                           navigate(`/dashboard/update-lesson/${item._id}`); // Navigate to the update page
                         }}
